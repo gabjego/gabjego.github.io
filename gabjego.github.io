@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel "Mr. G" Gomez - Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8 lg:p-12">
+
+    <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+        
+        <!-- Header Section -->
+        <header class="bg-slate-900 text-white p-8 md:p-12">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Gabriel "Mr. G" Gomez</h1>
+                    <h2 class="text-xl md:text-2xl text-blue-400 font-medium mb-4">STEM, Digital Culture & Language Educator</h2>
+                    <p class="text-slate-300 max-w-2xl text-sm md:text-base leading-relaxed">
+                        Dynamic and multifaceted Educator, Academic Leader, and Digital Media Creator with over 20 years of experience. Proven track record of designing and delivering highly engaging programs spanning STEM (Robotics, Python), AI Technologies, digital culture, and applied languages. Leverages a background in sound engineering and musical performance to create immersive, multimedia-rich learning environments.
+                    </p>
+                </div>
+                <div class="flex flex-col gap-2 text-sm text-slate-300 w-full md:w-auto mt-4 md:mt-0">
+                    <div class="flex items-center justify-center md:justify-end gap-2">
+                        <i class="fa-solid fa-location-dot text-blue-400"></i> Zapopan, Jalisco, Mexico
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2">
+                        <i class="fa-solid fa-phone text-blue-400"></i> +52 33 1151 9056
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2">
+                        <i class="fa-solid fa-envelope text-blue-400"></i> gabjego@gmail.com
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2">
+                        <i class="fa-solid fa-globe text-blue-400"></i> <a href="https://gabjego.github.io" target="_blank" class="hover:text-blue-200 transition">gabjego.github.io</a>
+                    </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2 mt-2">
+                        <a href="https://www.linkedin.com/in/gabriel-g%C3%B3mez-77054046/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Layout -->
+        <div class="flex flex-col md:flex-row">
+            
+            <!-- Left Column: Experience -->
+            <div class="w-full md:w-2/3 p-8 md:p-12 border-r border-slate-100">
+                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
+                    <i class="fa-solid fa-briefcase text-blue-600"></i> Professional Experience
+                </h3>
+
+                <!-- Job 1 -->
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-800">Colegio Once México</h4>
+                        <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Jul 2025 – Present</span>
+                    </div>
+                    <p class="text-md font-medium text-slate-600 mb-3 italic">STEM, Digital Culture & Language Educator</p>
+                    <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
+                        <li>Lead comprehensive technology and academic curriculum across elementary, middle, and high school levels, teaching Robotics, Math, Economics, and Digital Culture.</li>
+                        <li>Implement hands-on "Aula Maker" methodologies, integrating Python programming, 3D printing, and computer assembly into interactive student projects.</li>
+                        <li>Integrate <strong>AI technologies and tools</strong> into the curriculum to enhance learning outcomes and familiarize students with next-generation digital resources.</li>
+                        <li>Direct and produce the student Podcast Workshop, leveraging professional audio/video production expertise to teach digital media creation and modern communication skills.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-800">Escuela Bancaria y Comercial (EBC)</h4>
+                        <span class="text-sm font-semibold text-slate-500">Aug 2017 – Jun 2025</span>
+                    </div>
+                    <p class="text-md font-medium text-slate-600 mb-3 italic">Academia Leader & Instructor</p>
+                    <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
+                        <li>Led the English academy, overseeing faculty coordination, academic standards, and program delivery.</li>
+                        <li>Instructed advanced Business English courses to equip students with professional communication skills.</li>
+                        <li>Developed and facilitated innovative extracurricular workshops, including French, Italian, and Stand-Up Comedy.</li>
+                    </ul>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="mb-8">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-800">MEXTESOL (Jalisco Chapter)</h4>
+                        <span class="text-sm font-semibold text-slate-500">Jun 2019 – Present</span>
+                    </div>
+                    <p class="text-md font-medium text-slate-600 mb-3 italic">Chapter President & Board Member</p>
+                    <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
+                        <li><strong>President (2020-2023):</strong> Directed chapter initiatives, organized professional development events, and spearheaded strategic growth during the global transition to digital learning.</li>
+                        <li><strong>Ethics & Comm. Committee:</strong> Member since March 2023.</li>
+                        <li><strong>Treasurer (2019-2020):</strong> Managed financial operations and budgeting.</li>
+                    </ul>
+                </div>
+
+                 <!-- Job 4 -->
+                 <div class="mb-8">
+                    <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
+                        <h4 class="text-xl font-bold text-slate-800">Corporate Language Consultant</h4>
+                        <span class="text-sm font-semibold text-slate-500">Feb 2014 – Jun 2024</span>
+                    </div>
+                    <p class="text-md font-medium text-slate-600 mb-3 italic">Tech & Medical Sectors</p>
+                    <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
+                        <li><strong>TDI Medical Technologies:</strong> Delivered specialized Business English classes focused on the medical technology industry.</li>
+                        <li><strong>Unosquare & Toshiba:</strong> Designed and executed English training programs specifically for engineers and professionals in tech companies.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Skills & Education -->
+            <div class="w-full md:w-1/3 p-8 md:p-12 bg-slate-50">
+                
+                <!-- Competencies -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
+                        <i class="fa-solid fa-microchip text-blue-600"></i> Core Competencies
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-1 rounded">AI Implementation</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Aula Maker Pedagogy</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Robotics & Python</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">3D Printing</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Podcast Production</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">A/V Editing</span>
+                        <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Sound Engineering</span>
+                        <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Vocals & Guitar</span>
+                        <span class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Curriculum Development</span>
+                        <span class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Team Leadership</span>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
+                        <i class="fa-solid fa-language text-blue-600"></i> Languages
+                    </h3>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">Spanish</span> <span class="text-slate-500">Native</span></li>
+                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">English</span> <span class="text-blue-600 font-bold border border-blue-200 px-2 rounded text-xs">C2 (CPE/TOEFL)</span></li>
+                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">French</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2 (DELF)</span></li>
+                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">Italian</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2</span></li>
+                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">German</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">A1</span></li>
+                    </ul>
+                </div>
+
+                <!-- Tech Accreditations -->
+                <div class="mb-10">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
+                        <i class="fa-solid fa-certificate text-blue-600"></i> Tech & Media Certs
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><strong class="text-purple-700">Google:</strong> Generative AI for Educators <em class="text-xs text-slate-400">(In Progress)</em></li>
+                        <li><strong>Google & Coursera:</strong> Digital Marketing & E-commerce</li>
+                        <li><strong>IDEFT Jalisco:</strong> IT Support & Computer Assembly</li>
+                        <li><strong>Uxmalase:</strong> Sound Engineering & Music Production</li>
+                    </ul>
+                </div>
+
+                 <!-- Education -->
+                 <div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
+                        <i class="fa-solid fa-graduation-cap text-blue-600"></i> Education
+                    </h3>
+                    <ul class="space-y-4 text-sm text-slate-600">
+                        <li>
+                            <strong class="text-slate-800 block">Universidad de Guadalajara</strong>
+                            Licenciatura en la Docencia del Inglés
+                        </li>
+                        <li>
+                            <strong class="text-slate-800 block">Ι.Ν.Β.Α. Ε.Ι.Α. #3</strong>
+                            Iniciación Profesional en Música
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
