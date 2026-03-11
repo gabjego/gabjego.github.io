@@ -13,9 +13,22 @@
             background-color: #f3f4f6;
             color: #1f2937;
         }
+        .lang-btn.active {
+            background-color: #3b82f6; /* text-blue-500 */
+            color: white;
+            border-color: #3b82f6;
+        }
     </style>
 </head>
-<body class="p-4 md:p-8 lg:p-12">
+<body class="p-4 md:p-8 lg:p-12 relative">
+
+    <!-- Language Switcher -->
+    <div class="max-w-5xl mx-auto mb-4 flex justify-end gap-2">
+        <button onclick="setLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border border-slate-300 rounded-full text-slate-600 hover:bg-slate-200 transition">EN</button>
+        <button onclick="setLang('es')" id="btn-es" class="lang-btn px-3 py-1 text-xs font-bold border border-slate-300 rounded-full text-slate-600 hover:bg-slate-200 transition">ES</button>
+        <button onclick="setLang('fr')" id="btn-fr" class="lang-btn px-3 py-1 text-xs font-bold border border-slate-300 rounded-full text-slate-600 hover:bg-slate-200 transition">FR</button>
+        <button onclick="setLang('it')" id="btn-it" class="lang-btn px-3 py-1 text-xs font-bold border border-slate-300 rounded-full text-slate-600 hover:bg-slate-200 transition">IT</button>
+    </div>
 
     <div class="max-w-5xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
         
@@ -24,14 +37,14 @@
             <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-6">
                 <div class="text-center md:text-left">
                     <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Gabriel "Mr. G" Gomez</h1>
-                    <h2 class="text-xl md:text-2xl text-blue-400 font-medium mb-4">STEM, Digital Culture & Language Educator</h2>
-                    <p class="text-slate-300 max-w-2xl text-sm md:text-base leading-relaxed">
+                    <h2 id="role-title" class="text-xl md:text-2xl text-blue-400 font-medium mb-4">STEM, Digital Culture & Language Educator</h2>
+                    <p id="summary-text" class="text-slate-300 max-w-2xl text-sm md:text-base leading-relaxed">
                         Dynamic and multifaceted Educator, Academic Leader, and Digital Media Creator with over 20 years of experience. Proven track record of designing and delivering highly engaging programs spanning STEM (Robotics, Python), AI Technologies, digital culture, and applied languages. Leverages a background in sound engineering and musical performance to create immersive, multimedia-rich learning environments.
                     </p>
                 </div>
                 <div class="flex flex-col gap-2 text-sm text-slate-300 w-full md:w-auto mt-4 md:mt-0">
                     <div class="flex items-center justify-center md:justify-end gap-2">
-                        <i class="fa-solid fa-location-dot text-blue-400"></i> Zapopan, Jalisco, Mexico
+                        <i class="fa-solid fa-location-dot text-blue-400"></i> <span id="loc-text">Zapopan, Jalisco, Mexico</span>
                     </div>
                     <div class="flex items-center justify-center md:justify-end gap-2">
                         <i class="fa-solid fa-phone text-blue-400"></i> +52 33 1151 9056
@@ -39,9 +52,11 @@
                     <div class="flex items-center justify-center md:justify-end gap-2">
                         <i class="fa-solid fa-envelope text-blue-400"></i> gabjego@gmail.com
                     </div>
+                    <div class="flex items-center justify-center md:justify-end gap-2">
+                        <i class="fa-solid fa-globe text-blue-400"></i> <a href="https://gabjego.github.io" target="_blank" class="hover:text-blue-200 transition">gabjego.github.io</a>
+                    </div>
                     <div class="flex items-center justify-center md:justify-end gap-2 mt-2">
-                        <a href="https://gabjego.github.io" target="_blank" class="hover:text-blue-200 transition" title="Personal Website"><i class="fa-solid fa-globe text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/gabriel-g%C3%B3mez-77054046/" target="_blank" class="hover:text-white transition" title="LinkedIn Profile"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                        <a href="https://www.linkedin.com/in/gabriel-g%C3%B3mez-77054046/" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
                     </div>
                 </div>
             </div>
@@ -53,21 +68,21 @@
             <!-- Left Column: Experience -->
             <div class="w-full md:w-2/3 p-8 md:p-12 border-r border-slate-100">
                 <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2 border-b pb-2">
-                    <i class="fa-solid fa-briefcase text-blue-600"></i> Professional Experience
+                    <i class="fa-solid fa-briefcase text-blue-600"></i> <span id="h-exp">Professional Experience</span>
                 </h3>
 
                 <!-- Job 1 -->
                 <div class="mb-8">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Colegio Once México</h4>
-                        <span class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Jul 2025 – Present</span>
+                        <span id="date-1" class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Jul 2025 – Present</span>
                     </div>
-                    <p class="text-md font-medium text-slate-600 mb-3 italic">STEM, Digital Culture & Language Educator</p>
+                    <p id="role-1" class="text-md font-medium text-slate-600 mb-3 italic">STEM, Digital Culture & Language Educator</p>
                     <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
-                        <li>Lead comprehensive technology and academic curriculum across elementary, middle, and high school levels, teaching Robotics, Math, Economics, and Digital Culture.</li>
-                        <li>Implement hands-on "Aula Maker" methodologies, integrating Python programming, 3D printing, and computer assembly into interactive student projects.</li>
-                        <li>Integrate <strong>AI technologies and tools</strong> into the curriculum to enhance learning outcomes and familiarize students with next-generation digital resources.</li>
-                        <li>Direct and produce the student Podcast Workshop, leveraging professional audio/video production expertise to teach digital media creation and modern communication skills.</li>
+                        <li id="task-1-1">Lead comprehensive technology and academic curriculum across elementary, middle, and high school levels, teaching Robotics, Math, Economics, and Digital Culture.</li>
+                        <li id="task-1-2">Implement hands-on "Aula Maker" methodologies, integrating Python programming, 3D printing, and computer assembly into interactive student projects.</li>
+                        <li id="task-1-3">Integrate <strong>AI technologies and tools</strong> into the curriculum to enhance learning outcomes and familiarize students with next-generation digital resources.</li>
+                        <li id="task-1-4">Direct and produce the student Podcast Workshop, leveraging professional audio/video production expertise to teach digital media creation and modern communication skills.</li>
                     </ul>
                 </div>
 
@@ -75,13 +90,13 @@
                 <div class="mb-8">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                         <h4 class="text-xl font-bold text-slate-800">Escuela Bancaria y Comercial (EBC)</h4>
-                        <span class="text-sm font-semibold text-slate-500">Aug 2017 – Jun 2025</span>
+                        <span id="date-2" class="text-sm font-semibold text-slate-500">Aug 2017 – Jun 2025</span>
                     </div>
-                    <p class="text-md font-medium text-slate-600 mb-3 italic">Academia Leader & Instructor</p>
+                    <p id="role-2" class="text-md font-medium text-slate-600 mb-3 italic">Academia Leader & Instructor</p>
                     <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
-                        <li>Led the English academy, overseeing faculty coordination, academic standards, and program delivery.</li>
-                        <li>Instructed advanced Business English courses to equip students with professional communication skills.</li>
-                        <li>Developed and facilitated innovative extracurricular workshops, including French, Italian, and Stand-Up Comedy.</li>
+                        <li id="task-2-1">Led the English academy, overseeing faculty coordination, academic standards, and program delivery.</li>
+                        <li id="task-2-2">Instructed advanced Business English courses to equip students with professional communication skills.</li>
+                        <li id="task-2-3">Developed and facilitated innovative extracurricular workshops, including French, Italian, and Stand-Up Comedy.</li>
                     </ul>
                 </div>
 
@@ -89,26 +104,26 @@
                 <div class="mb-8">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
                         <h4 class="text-xl font-bold text-slate-800">MEXTESOL (Jalisco Chapter)</h4>
-                        <span class="text-sm font-semibold text-slate-500">Jun 2019 – Present</span>
+                        <span id="date-3" class="text-sm font-semibold text-slate-500">Jun 2019 – Present</span>
                     </div>
-                    <p class="text-md font-medium text-slate-600 mb-3 italic">Chapter President & Board Member</p>
+                    <p id="role-3" class="text-md font-medium text-slate-600 mb-3 italic">Chapter President & Board Member</p>
                     <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
-                        <li><strong>President (2020-2023):</strong> Directed chapter initiatives, organized professional development events, and spearheaded strategic growth during the global transition to digital learning.</li>
-                        <li><strong>Ethics & Comm. Committee:</strong> Member since March 2023.</li>
-                        <li><strong>Treasurer (2019-2020):</strong> Managed financial operations and budgeting.</li>
+                        <li id="task-3-1"><strong>President (2020-2023):</strong> Directed chapter initiatives, organized professional development events, and spearheaded strategic growth during the global transition to digital learning.</li>
+                        <li id="task-3-2"><strong>Ethics & Comm. Committee:</strong> Member since March 2023.</li>
+                        <li id="task-3-3"><strong>Treasurer (2019-2020):</strong> Managed financial operations and budgeting.</li>
                     </ul>
                 </div>
 
                  <!-- Job 4 -->
                  <div class="mb-8">
                     <div class="flex flex-col md:flex-row md:justify-between md:items-baseline mb-2">
-                        <h4 class="text-xl font-bold text-slate-800">Corporate Language Consultant</h4>
-                        <span class="text-sm font-semibold text-slate-500">Feb 2014 – Jun 2024</span>
+                        <h4 id="title-4" class="text-xl font-bold text-slate-800">Corporate Language Consultant</h4>
+                        <span id="date-4" class="text-sm font-semibold text-slate-500">Feb 2014 – Jun 2024</span>
                     </div>
-                    <p class="text-md font-medium text-slate-600 mb-3 italic">Tech & Medical Sectors</p>
+                    <p id="role-4" class="text-md font-medium text-slate-600 mb-3 italic">Tech & Medical Sectors</p>
                     <ul class="list-disc list-outside ml-5 text-slate-600 space-y-2 text-sm">
-                        <li><strong>TDI Medical Technologies:</strong> Delivered specialized Business English classes focused on the medical technology industry.</li>
-                        <li><strong>Unosquare & Toshiba:</strong> Designed and executed English training programs specifically for engineers and professionals in tech companies.</li>
+                        <li id="task-4-1"><strong>TDI Medical Technologies:</strong> Delivered specialized Business English classes focused on the medical technology industry.</li>
+                        <li id="task-4-2"><strong>Unosquare & Toshiba:</strong> Designed and executed English training programs specifically for engineers and professionals in tech companies.</li>
                     </ul>
                 </div>
 
@@ -120,62 +135,62 @@
                 <!-- Competencies -->
                 <div class="mb-10">
                     <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
-                        <i class="fa-solid fa-microchip text-blue-600"></i> Core Competencies
+                        <i class="fa-solid fa-microchip text-blue-600"></i> <span id="h-comp">Core Competencies</span>
                     </h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-1 rounded">AI Implementation</span>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Aula Maker Pedagogy</span>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Robotics & Python</span>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">3D Printing</span>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Podcast Production</span>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">A/V Editing</span>
-                        <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Sound Engineering</span>
-                        <span class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Vocals & Guitar</span>
-                        <span class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Curriculum Development</span>
-                        <span class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Team Leadership</span>
+                        <span id="c-1" class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-1 rounded">AI Implementation</span>
+                        <span id="c-2" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Aula Maker Pedagogy</span>
+                        <span id="c-3" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Robotics & Python</span>
+                        <span id="c-4" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">3D Printing</span>
+                        <span id="c-5" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">Podcast Production</span>
+                        <span id="c-6" class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-1 rounded">A/V Editing</span>
+                        <span id="c-7" class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Sound Engineering</span>
+                        <span id="c-8" class="bg-rose-100 text-rose-800 text-xs font-semibold px-2.5 py-1 rounded">Vocals & Guitar</span>
+                        <span id="c-9" class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Curriculum Development</span>
+                        <span id="c-10" class="bg-slate-200 text-slate-800 text-xs font-semibold px-2.5 py-1 rounded">Team Leadership</span>
                     </div>
                 </div>
 
                 <!-- Languages -->
                 <div class="mb-10">
                     <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
-                        <i class="fa-solid fa-language text-blue-600"></i> Languages
+                        <i class="fa-solid fa-language text-blue-600"></i> <span id="h-lang">Languages</span>
                     </h3>
                     <ul class="space-y-3 text-sm">
-                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">Spanish</span> <span class="text-slate-500">Native</span></li>
-                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">English</span> <span class="text-blue-600 font-bold border border-blue-200 px-2 rounded text-xs">C2 (CPE/TOEFL)</span></li>
-                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">French</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2 (DELF)</span></li>
-                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">Italian</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2</span></li>
-                        <li class="flex justify-between items-center"><span class="font-semibold text-slate-700">German</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">A1</span></li>
+                        <li class="flex justify-between items-center"><span id="l-es" class="font-semibold text-slate-700">Spanish</span> <span id="l-nat" class="text-slate-500">Native</span></li>
+                        <li class="flex justify-between items-center"><span id="l-en" class="font-semibold text-slate-700">English</span> <span class="text-blue-600 font-bold border border-blue-200 px-2 rounded text-xs">C2 (CPE/TOEFL)</span></li>
+                        <li class="flex justify-between items-center"><span id="l-fr" class="font-semibold text-slate-700">French</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2 (DELF)</span></li>
+                        <li class="flex justify-between items-center"><span id="l-it" class="font-semibold text-slate-700">Italian</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">B2</span></li>
+                        <li class="flex justify-between items-center"><span id="l-de" class="font-semibold text-slate-700">German</span> <span class="text-slate-500 font-bold bg-slate-200 px-2 rounded text-xs">A1</span></li>
                     </ul>
                 </div>
 
                 <!-- Tech Accreditations -->
                 <div class="mb-10">
                     <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
-                        <i class="fa-solid fa-certificate text-blue-600"></i> Tech & Media Certs
+                        <i class="fa-solid fa-certificate text-blue-600"></i> <span id="h-certs">Tech & Media Certs</span>
                     </h3>
                     <ul class="space-y-3 text-sm text-slate-600">
-                        <li><strong class="text-purple-700">Google:</strong> Generative AI for Educators <em class="text-xs text-slate-400">(In Progress)</em></li>
-                        <li><strong>Google & Coursera:</strong> Digital Marketing & E-commerce</li>
-                        <li><strong>IDEFT Jalisco:</strong> IT Support & Computer Assembly</li>
-                        <li><strong>Uxmalase:</strong> Sound Engineering & Music Production</li>
+                        <li><strong class="text-purple-700">Google:</strong> <span id="cert-1">Generative AI for Educators</span> <em id="cert-prog" class="text-xs text-slate-400">(In Progress)</em></li>
+                        <li><strong>Google & Coursera:</strong> <span id="cert-2">Digital Marketing & E-commerce</span></li>
+                        <li><strong>IDEFT Jalisco:</strong> <span id="cert-3">IT Support & Computer Assembly</span></li>
+                        <li><strong>Uxmalase:</strong> <span id="cert-4">Sound Engineering & Music Production</span></li>
                     </ul>
                 </div>
 
                  <!-- Education -->
                  <div>
                     <h3 class="text-xl font-bold text-slate-800 mb-4 flex items-center gap-2 border-b pb-2">
-                        <i class="fa-solid fa-graduation-cap text-blue-600"></i> Education
+                        <i class="fa-solid fa-graduation-cap text-blue-600"></i> <span id="h-edu">Education</span>
                     </h3>
                     <ul class="space-y-4 text-sm text-slate-600">
                         <li>
                             <strong class="text-slate-800 block">Universidad de Guadalajara</strong>
-                            Licenciatura en la Docencia del Inglés
+                            <span id="edu-1">Licenciatura en la Docencia del Inglés</span> <em id="edu-prog" class="text-xs text-slate-400">(CENEVAL pending)</em>
                         </li>
                         <li>
                             <strong class="text-slate-800 block">Ι.Ν.Β.Α. Ε.Ι.Α. #3</strong>
-                            Iniciación Profesional en Música
+                            <span id="edu-2">Iniciación Profesional en Música</span>
                         </li>
                     </ul>
                 </div>
@@ -184,5 +199,172 @@
         </div>
     </div>
 
+    <script>
+        const translations = {
+            en: {
+                "role-title": "STEM, Digital Culture & Language Educator",
+                "summary-text": "Dynamic and multifaceted Educator, Academic Leader, and Digital Media Creator with over 20 years of experience. Proven track record of designing and delivering highly engaging programs spanning STEM (Robotics, Python), AI Technologies, digital culture, and applied languages. Leverages a background in sound engineering and musical performance to create immersive, multimedia-rich learning environments.",
+                "loc-text": "Zapopan, Jalisco, Mexico",
+                "h-exp": "Professional Experience",
+                "date-1": "Jul 2025 – Present",
+                "role-1": "STEM, Digital Culture & Language Educator",
+                "task-1-1": "Lead comprehensive technology and academic curriculum across elementary, middle, and high school levels, teaching Robotics, Math, Economics, and Digital Culture.",
+                "task-1-2": 'Implement hands-on "Aula Maker" methodologies, integrating Python programming, 3D printing, and computer assembly into interactive student projects.',
+                "task-1-3": "Integrate <strong>AI technologies and tools</strong> into the curriculum to enhance learning outcomes and familiarize students with next-generation digital resources.",
+                "task-1-4": "Direct and produce the student Podcast Workshop, leveraging professional audio/video production expertise to teach digital media creation and modern communication skills.",
+                "date-2": "Aug 2017 – Jun 2025",
+                "role-2": "Academia Leader & Instructor",
+                "task-2-1": "Led the English academy, overseeing faculty coordination, academic standards, and program delivery.",
+                "task-2-2": "Instructed advanced Business English courses to equip students with professional communication skills.",
+                "task-2-3": "Developed and facilitated innovative extracurricular workshops, including French, Italian, and Stand-Up Comedy.",
+                "date-3": "Jun 2019 – Present",
+                "role-3": "Chapter President & Board Member",
+                "task-3-1": "<strong>President (2020-2023):</strong> Directed chapter initiatives, organized professional development events, and spearheaded strategic growth during the global transition to digital learning.",
+                "task-3-2": "<strong>Ethics & Comm. Committee:</strong> Member since March 2023.",
+                "task-3-3": "<strong>Treasurer (2019-2020):</strong> Managed financial operations and budgeting.",
+                "title-4": "Corporate Language Consultant",
+                "date-4": "Feb 2014 – Jun 2024",
+                "role-4": "Tech & Medical Sectors",
+                "task-4-1": "<strong>TDI Medical Technologies:</strong> Delivered specialized Business English classes focused on the medical technology industry.",
+                "task-4-2": "<strong>Unosquare & Toshiba:</strong> Designed and executed English training programs specifically for engineers and professionals in tech companies.",
+                "h-comp": "Core Competencies",
+                "c-1": "AI Implementation", "c-2": "Aula Maker Pedagogy", "c-3": "Robotics & Python", "c-4": "3D Printing",
+                "c-5": "Podcast Production", "c-6": "A/V Editing", "c-7": "Sound Engineering", "c-8": "Vocals & Guitar",
+                "c-9": "Curriculum Development", "c-10": "Team Leadership",
+                "h-lang": "Languages",
+                "l-es": "Spanish", "l-en": "English", "l-fr": "French", "l-it": "Italian", "l-de": "German", "l-nat": "Native",
+                "h-certs": "Tech & Media Certs",
+                "cert-1": "Generative AI for Educators", "cert-prog": "(In Progress)",
+                "cert-2": "Digital Marketing & E-commerce", "cert-3": "IT Support & Computer Assembly", "cert-4": "Sound Engineering & Music Production",
+                "h-edu": "Education",
+                "edu-1": "Licenciatura en la Docencia del Inglés", "edu-prog": "(CENEVAL pending)", "edu-2": "Iniciación Profesional en Música"
+            },
+            es: {
+                "role-title": "Educador de STEM, Cultura Digital e Idiomas",
+                "summary-text": "Educador, líder académico y creador de medios digitales dinámico y multifacético con más de 20 años de experiencia. Historial comprobado en el diseño y entrega de programas altamente atractivos que abarcan STEM (Robótica, Python), tecnologías de IA, cultura digital e idiomas aplicados. Aprovecha su experiencia en ingeniería de sonido y actuación musical para crear entornos de aprendizaje inmersivos y ricos en multimedia.",
+                "loc-text": "Zapopan, Jalisco, México",
+                "h-exp": "Experiencia Profesional",
+                "date-1": "Jul 2025 – Presente",
+                "role-1": "Educador de STEM, Cultura Digital e Idiomas",
+                "task-1-1": "Lidera el currículo tecnológico y académico integral en los niveles de primaria, secundaria y preparatoria, enseñando Robótica, Matemáticas, Economía y Cultura Digital.",
+                "task-1-2": 'Implementa metodologías prácticas de "Aula Maker", integrando programación en Python, impresión 3D y ensamblaje de computadoras en proyectos interactivos para estudiantes.',
+                "task-1-3": "Integra <strong>tecnologías y herramientas de IA</strong> en el currículo para mejorar los resultados del aprendizaje y familiarizar a los estudiantes con recursos digitales de próxima generación.",
+                "task-1-4": "Dirige y produce el Taller de Podcast para estudiantes, aprovechando su experiencia en producción profesional de audio/video para enseñar creación de medios digitales.",
+                "date-2": "Ago 2017 – Jun 2025",
+                "role-2": "Líder de Academia e Instructor",
+                "task-2-1": "Dirigió la academia de inglés, supervisando la coordinación docente, los estándares académicos y la entrega de programas.",
+                "task-2-2": "Instruyó cursos avanzados de Inglés de Negocios para dotar a los estudiantes de habilidades de comunicación profesional.",
+                "task-2-3": "Desarrolló y facilitó talleres extracurriculares innovadores, incluyendo Francés, Italiano y Stand-Up Comedy.",
+                "date-3": "Jun 2019 – Presente",
+                "role-3": "Presidente del Capítulo y Miembro de la Mesa Directiva",
+                "task-3-1": "<strong>Presidente (2020-2023):</strong> Dirigió iniciativas del capítulo, organizó eventos de desarrollo profesional y lideró el crecimiento estratégico durante la transición al aprendizaje digital.",
+                "task-3-2": "<strong>Comité de Ética y Com.:</strong> Miembro desde marzo de 2023.",
+                "task-3-3": "<strong>Tesorero (2019-2020):</strong> Gestionó operaciones financieras y presupuestos.",
+                "title-4": "Consultor de Idiomas Corporativo",
+                "date-4": "Feb 2014 – Jun 2024",
+                "role-4": "Sectores Tecnológico y Médico",
+                "task-4-1": "<strong>TDI Medical Technologies:</strong> Impartió clases especializadas de Inglés de Negocios enfocadas en la industria de tecnología médica.",
+                "task-4-2": "<strong>Unosquare & Toshiba:</strong> Diseñó y ejecutó programas de formación en inglés específicamente para ingenieros y profesionales en empresas tecnológicas.",
+                "h-comp": "Competencias Principales",
+                "c-1": "Implementación de IA", "c-2": "Pedagogía Aula Maker", "c-3": "Robótica y Python", "c-4": "Impresión 3D",
+                "c-5": "Producción de Podcast", "c-6": "Edición A/V", "c-7": "Ingeniería de Sonido", "c-8": "Voz y Guitarra",
+                "c-9": "Desarrollo Curricular", "c-10": "Liderazgo de Equipos",
+                "h-lang": "Idiomas",
+                "l-es": "Español", "l-en": "Inglés", "l-fr": "Francés", "l-it": "Italiano", "l-de": "Alemán", "l-nat": "Nativo",
+                "h-certs": "Certificaciones",
+                "cert-1": "IA Generativa para Educadores", "cert-prog": "(En curso)",
+                "cert-2": "Marketing Digital y E-commerce", "cert-3": "Soporte TI y Ensamblaje de PC", "cert-4": "Ingeniería de Sonido y Prod. Musical",
+                "h-edu": "Educación",
+                "edu-1": "Licenciatura en la Docencia del Inglés", "edu-prog": "(CENEVAL pendiente)", "edu-2": "Iniciación Profesional en Música"
+            },
+            fr: {
+                "role-title": "Éducateur STEM, Culture Numérique et Langues",
+                "summary-text": "Éducateur dynamique et multifacette, leader académique et créateur de médias numériques avec plus de 20 ans d'expérience. Expérience avérée dans la conception et la prestation de programmes engageants couvrant les STEM (Robotique, Python), les technologies d'IA, la culture numérique et les langues appliquées. S'appuie sur une formation en ingénierie du son et en interprétation musicale pour créer des environnements d'apprentissage immersifs.",
+                "loc-text": "Zapopan, Jalisco, Mexique",
+                "h-exp": "Expérience Professionnelle",
+                "date-1": "Juil 2025 – Présent",
+                "role-1": "Éducateur STEM, Culture Numérique et Langues",
+                "task-1-1": "Dirige le programme technologique et académique aux niveaux primaire, collège et lycée (Robotique, Mathématiques, Économie, Culture Numérique).",
+                "task-1-2": "Met en œuvre des méthodologies pratiques « Aula Maker », intégrant Python, l'impression 3D et l'assemblage de PC dans des projets interactifs.",
+                "task-1-3": "Intègre les <strong>technologies et outils d'IA</strong> dans le programme pour améliorer l'apprentissage et familiariser les étudiants avec les ressources de nouvelle génération.",
+                "task-1-4": "Dirige et produit l'atelier Podcast pour les étudiants, enseignant la création de médias numériques et les compétences de communication.",
+                "date-2": "Août 2017 – Juin 2025",
+                "role-2": "Responsable d'Académie et Instructeur",
+                "task-2-1": "A dirigé l'académie d'anglais, supervisant la coordination, les normes académiques et la prestation des programmes.",
+                "task-2-2": "A dispensé des cours d'anglais des affaires avancés pour doter les étudiants de compétences en communication professionnelle.",
+                "task-2-3": "A développé et animé des ateliers parascolaires innovants (Français, Italien, Stand-Up).",
+                "date-3": "Juin 2019 – Présent",
+                "role-3": "Président du Chapitre et Membre du Conseil",
+                "task-3-1": "<strong>Président (2020-2023) :</strong> A dirigé les initiatives, organisé des événements et mené la croissance stratégique pendant la transition vers l'apprentissage numérique.",
+                "task-3-2": "<strong>Comité d'Éthique :</strong> Membre depuis mars 2023.",
+                "task-3-3": "<strong>Trésorier (2019-2020) :</strong> A géré les opérations financières et le budget.",
+                "title-4": "Consultant Linguistique d'Entreprise",
+                "date-4": "Fév 2014 – Juin 2024",
+                "role-4": "Secteurs Technologique et Médical",
+                "task-4-1": "<strong>TDI Medical Technologies :</strong> A dispensé des cours spécialisés d'anglais des affaires (industrie médicale).",
+                "task-4-2": "<strong>Unosquare & Toshiba :</strong> A conçu et exécuté des programmes de formation en anglais pour les ingénieurs (entreprises technologiques).",
+                "h-comp": "Compétences Principales",
+                "c-1": "Implémentation de l'IA", "c-2": "Pédagogie Aula Maker", "c-3": "Robotique et Python", "c-4": "Impression 3D",
+                "c-5": "Production de Podcast", "c-6": "Édition A/V", "c-7": "Ingénierie du Son", "c-8": "Chant et Guitare",
+                "c-9": "Développement de Programmes", "c-10": "Leadership d'Équipe",
+                "h-lang": "Langues",
+                "l-es": "Espagnol", "l-en": "Anglais", "l-fr": "Français", "l-it": "Italien", "l-de": "Allemand", "l-nat": "Maternel",
+                "h-certs": "Certifications",
+                "cert-1": "IA Générative pour les Éducateurs", "cert-prog": "(En cours)",
+                "cert-2": "Marketing Digital et E-commerce", "cert-3": "Support Informatique et Assemblage de PC", "cert-4": "Ingénierie du Son et Prod. Musicale",
+                "h-edu": "Éducation",
+                "edu-1": "Licence en Enseignement de l'Anglais", "edu-prog": "(CENEVAL en attente)", "edu-2": "Initiation Professionnelle à la Musique"
+            },
+            it: {
+                "role-title": "Educatore STEM, Cultura Digitale e Lingue",
+                "summary-text": "Educatore dinamico e poliedrico, leader accademico e creatore di media digitali con oltre 20 anni di esperienza. Comprovata esperienza nella progettazione di programmi altamente coinvolgenti che spaziano tra STEM (Robotica, Python), tecnologie IA, cultura digitale e lingue. Sfrutta il suo background in ingegneria del suono e performance musicale per creare ambienti di apprendimento immersivi.",
+                "loc-text": "Zapopan, Jalisco, Messico",
+                "h-exp": "Esperienza Professionale",
+                "date-1": "Lug 2025 – Presente",
+                "role-1": "Educatore STEM, Cultura Digitale e Lingue",
+                "task-1-1": "Guida il curriculum tecnologico e accademico nei livelli elementare, medio e superiore, insegnando Robotica, Matematica, Economia e Cultura Digitale.",
+                "task-1-2": 'Implementa metodologie pratiche "Aula Maker", integrando programmazione Python, stampa 3D e assemblaggio di computer in progetti interattivi.',
+                "task-1-3": "Integra <strong>tecnologie e strumenti IA</strong> nel curriculum per migliorare l'apprendimento e familiarizzare gli studenti con le risorse digitali di nuova generazione.",
+                "task-1-4": "Dirige e produce il laboratorio di Podcast per gli studenti, insegnando la creazione di media digitali e le abilità di comunicazione.",
+                "date-2": "Ago 2017 – Giu 2025",
+                "role-2": "Leader Accademico e Istruttore",
+                "task-2-1": "Ha diretto l'accademia di inglese, supervisionando il coordinamento, gli standard accademici e l'erogazione dei programmi.",
+                "task-2-2": "Ha tenuto corsi avanzati di Business English per dotare gli studenti di capacità di comunicazione professionale.",
+                "task-2-3": "Ha sviluppato e facilitato laboratori extracurricolari innovativi (Francese, Italiano, Stand-Up Comedy).",
+                "date-3": "Giu 2019 – Presente",
+                "role-3": "Presidente del Capitolo e Membro del Consiglio",
+                "task-3-1": "<strong>Presidente (2020-2023):</strong> Ha diretto le iniziative, organizzato eventi e guidato la crescita strategica durante la transizione all'apprendimento digitale.",
+                "task-3-2": "<strong>Comitato Etico e Com.:</strong> Membro da marzo 2023.",
+                "task-3-3": "<strong>Tesoriere (2019-2020):</strong> Ha gestito le operazioni finanziarie e il budget.",
+                "title-4": "Consulente Linguistico Aziendale",
+                "date-4": "Feb 2014 – Giu 2024",
+                "role-4": "Settori Tecnologico e Medico",
+                "task-4-1": "<strong>TDI Medical Technologies:</strong> Ha tenuto lezioni specializzate di Business English (settore medico).",
+                "task-4-2": "<strong>Unosquare & Toshiba:</strong> Ha progettato programmi di formazione in inglese per ingegneri (aziende tecnologiche).",
+                "h-comp": "Competenze Principali",
+                "c-1": "Implementazione IA", "c-2": "Pedagogia Aula Maker", "c-3": "Robotica e Python", "c-4": "Stampa 3D",
+                "c-5": "Produzione Podcast", "c-6": "Montaggio A/V", "c-7": "Ingegneria del Suono", "c-8": "Voce e Chitarra",
+                "c-9": "Sviluppo del Curriculum", "c-10": "Leadership del Team",
+                "h-lang": "Lingue",
+                "l-es": "Spagnolo", "l-en": "Inglese", "l-fr": "Francese", "l-it": "Italiano", "l-de": "Tedesco", "l-nat": "Madrelingua",
+                "h-certs": "Certificazioni",
+                "cert-1": "IA Generativa per Educatori", "cert-prog": "(In corso)",
+                "cert-2": "Marketing Digitale ed E-commerce", "cert-3": "Supporto IT e Assemblaggio PC", "cert-4": "Ingegneria del Suono e Produzione",
+                "h-edu": "Istruzione",
+                "edu-1": "Laurea in Insegnamento dell'Inglese", "edu-prog": "(CENEVAL in attesa)", "edu-2": "Iniziazione Professionale alla Musica"
+            }
+        };
+
+        function setLang(lang) {
+            // Update Text
+            for (let key in translations[lang]) {
+                document.getElementById(key).innerHTML = translations[lang][key];
+            }
+            
+            // Update Active Button Style
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
 </body>
 </html>
